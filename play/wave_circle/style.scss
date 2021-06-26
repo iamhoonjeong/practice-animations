@@ -1,0 +1,41 @@
+html,
+body {
+  height: 100%;
+}
+
+body {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.wrap {
+  background: gold;
+  border-radius: 50%;
+  height: 300px;
+  position: relative;
+  width: 300px;
+  overflow: hidden;
+}
+
+.wave {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  background: blue;
+  top: 60%;
+  left: -100px;
+  border-radius: 43%;
+  animation: rotate 2s infinite linear;
+  opacity: 0.5;
+}
+.wave:last-child {
+  background: red;
+  animation: rotate 4s infinite linear;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(-360deg);
+  }
+}
