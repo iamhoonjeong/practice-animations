@@ -1,0 +1,55 @@
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+body {
+  margin: 0;
+  font-weight: 300;
+  color: #222;
+  background-color: #f4f4f4;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.gnb {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 600px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 50px 30px;
+}
+
+.gnb > li {
+  float: left;
+  width: 120px;
+  text-align: center;
+}
+
+.gnb > li > a {
+  font-size: 14px;
+  position: relative;
+}
+
+.gnb > li > a:before {
+  content: '';
+  position: absolute;
+  background-color: dodgerblue;
+  height: 2px;
+  width: 0;
+  bottom: -10px;
+  transition: 0.5s;
+
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.gnb > li > a:hover:before {
+  width: 100%;
+}

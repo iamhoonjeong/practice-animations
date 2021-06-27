@@ -1,0 +1,57 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.app-ui {
+  width: 340px;
+  height: 640px;
+
+  background-color: none;
+  transform-style: preserve-3d;
+  transform: rotateX(30deg) rotateZ(-45deg) scale(0.7);
+
+  position: relative;
+
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+  transition: 0.5s;
+
+  &:hover {
+    box-shadow: -50px 100px 60px rgba(0, 0, 0, 0.3);
+  }
+}
+
+.app-ui div {
+  /* 이미지들을 같은 위치에 두고, hover시 보이게 한다. */
+  position: absolute; /*이미지들을 같은 위치에 두기 위해 절대위치로 둠(1)*/
+  transition: 0.5s;
+  /*이미지에 이벤트가 발생하여 0.5초 동안 자연스럽게 발생할거야
+  요소자체에 transition을 써야함, hover한 곳에 쓰면 x
+  */
+  background-color: gray;
+  width: 100%;
+  height: 100%;
+}
+
+/* app-ui에 hover시 -> 내부 이미지요소별로 다른 애니메이션을 줌 */
+.app-ui:hover div:nth-child(1) {
+  /* transform은 변형 > translate는 이동(x,y축 둘다 적어야함)*/
+  transform: translate(40px, -40px);
+  opacity: 0.2; /*투명도를 이용해, hover시 이미지간 구별을 준다.*/
+}
+.app-ui:hover div:nth-child(2) {
+  /* 40px만큼 갭을 준다. */
+  transform: translate(80px, -80px);
+  opacity: 0.4;
+}
+.app-ui:hover div:nth-child(3) {
+  /* 40px만큼 갭을 준다. */
+  transform: translate(120px, -120px);
+  opacity: 0.6;
+}
+.app-ui:hover div:nth-child(4) {
+  /* 40px만큼 갭을 준다. */
+  transform: translate(160px, -160px);
+}
